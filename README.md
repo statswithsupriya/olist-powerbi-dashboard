@@ -1,39 +1,97 @@
 # Olist E-Commerce Analytics Dashboard
-Interactive Power BI dashboard for Olist E-Commerce analytics.
 
 ## Project Overview
 
-Developed an interactive Power BI dashboard using the Olist E-Commerce dataset to analyze revenue, customer behavior, seller performance, and product performance.
+Designed and developed an interactive Business Intelligence dashboard using the Olist E-Commerce dataset. The project focuses on analyzing revenue performance, customer behavior, seller performance, product category trends, and operational metrics through interactive visualizations and KPI reporting.
 
-## Tools Used
+The dashboard was built using Power BI and DAX, enabling business users to monitor key performance indicators and derive actionable insights through self-service analytics.
+
+---
+
+## Tools & Technologies
 
 - Power BI
 - DAX
 - Power Query
+- Data Modeling
+- Business Intelligence
+- Data Visualization
+
+---
+
+## Dataset Overview
+
+The Olist E-Commerce dataset contains information related to:
+
+- Customers
+- Orders
+- Order Items
+- Products
+- Sellers
+- Payments
+- Reviews
+- Product Categories
+
+The dataset was used to perform revenue analysis, customer analysis, seller analysis, and business performance reporting.
+
+---
 
 ## Dashboard Pages
 
 ### Executive Dashboard
 
+#### KPI Cards
+
 - Total Revenue
 - Total Orders
 - Total Customers
 - Average Order Value (AOV)
-- Revenue Trend
-- Top 10 Categories by Revenue
+
+#### Visualizations
+
+- Revenue Trend Analysis
+- Top 10 Product Categories by Revenue
 - Revenue by State
 - Orders by Status
 
+#### Filters
+
+- State Slicer
+
+---
+
 ### Seller Analysis
+
+#### KPI Cards
+
+- Total Sellers
+- Revenue per Seller
+
+#### Visualizations
 
 - Top 10 Sellers by Revenue
 - Top 10 Sellers by Order Count
 
+---
+
 ### Customer Analysis
 
-- Customer Count by State
-- Revenue by State
+#### KPI Cards
+
+- Customer Count
 - Revenue per Customer
+
+#### Visualizations
+
+- Customers by State
+- Revenue by State
+- Revenue per Customer by State
+
+#### Filters
+
+- State Slicer
+
+---
 
 ## Data Modeling
 
@@ -49,34 +107,110 @@ Developed an interactive Power BI dashboard using the Olist E-Commerce dataset t
 - Sellers
 - Product Category Translation
 
-### Data Model
+### Data Modeling Concepts Applied
 
-Implemented using a Star Schema approach.
+- Star Schema
+- One-to-Many Relationships
+- Primary Keys
+- Foreign Keys
+- Filter Context
+- Interactive Cross Filtering
+
+---
 
 ## Key DAX Measures
 
-- Total Revenue
-- Total Orders
-- Total Customers
-- AOV
-- Revenue per Customer
-- Order Count
+```DAX
+Total Revenue =
+SUM(Order_Items[price])
 
-## Business Insights
+Total Orders =
+DISTINCTCOUNT(Orders[order_id])
 
-- Identified top-performing product categories.
-- Analyzed seller contribution to revenue.
-- Evaluated state-wise revenue distribution.
-- Analyzed customer concentration by geography.
-- Monitored order fulfillment performance.
+Total Customers =
+DISTINCTCOUNT(Customers[customer_unique_id])
+
+AOV =
+DIVIDE([Total Revenue],[Total Orders])
+
+Order Count =
+COUNTROWS(Orders)
+
+Revenue per Customer =
+DIVIDE([Total Revenue],[Total Customers])
+
+Total Sellers =
+DISTINCTCOUNT(Sellers[seller_id])
+
+Revenue per Seller =
+DIVIDE([Total Revenue],[Total Sellers])
+```
+
+---
+
+## Business Questions Answered
+
+- How much revenue did the business generate?
+- How many orders were placed?
+- How many customers made purchases?
+- What is the Average Order Value?
+- How has revenue changed over time?
+- Which product categories generate the highest revenue?
+- Which states contribute most to revenue?
+- Which sellers are the top performers?
+- Where are customers concentrated geographically?
+- How are orders distributed across different statuses?
+
+---
+
+## Business Insights Generated
+
+- Identified top revenue-generating product categories.
+- Evaluated seller contribution to overall revenue.
+- Analyzed geographic revenue distribution across states.
+- Monitored order fulfillment through order status analysis.
+- Measured Average Order Value (AOV) as a key KPI.
+- Assessed customer concentration and customer value across different regions.
+- Created an interactive reporting solution enabling business users to explore data through filters and slicers.
+
+---
 
 ## Skills Demonstrated
 
-- Power Query
-- Data Modeling
-- Star Schema
-- DAX
-- Dashboard Design
+### Power BI
+
+- Dashboard Development
+- Interactive Reporting
 - KPI Reporting
-- Interactive Filtering
-- Business Intelligence
+- Data Visualization
+- Dashboard Storytelling
+
+### Data Modeling
+
+- Star Schema
+- Fact & Dimension Modeling
+- Relationship Management
+- Cardinality Management
+
+### DAX
+
+- Measures
+- Aggregations
+- DISTINCTCOUNT
+- COUNTROWS
+- DIVIDE
+- Filter Context
+
+### Analytics
+
+- Revenue Analysis
+- Customer Analysis
+- Seller Analysis
+- Product Performance Analysis
+- Geographic Analysis
+
+---
+
+## Project Outcome
+
+Developed a multi-page Power BI dashboard providing executive-level visibility into revenue, customer, seller, and product performance. The dashboard enables business users to monitor KPIs, identify performance trends, and make data-driven decisions through interactive analytics and visual storytelling.
