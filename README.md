@@ -210,6 +210,29 @@ DIVIDE([Total Revenue],[Total Sellers])
 - Geographic Analysis
 
 ---
+## Key Learning Outcomes
+
+- Performed data transformation using Power Query.
+- Applied data quality validation and profiling techniques.
+- Implemented a Star Schema data model.
+- Created and managed table relationships.
+- Developed DAX measures for KPI reporting.
+- Understood and applied Filter Context concepts.
+- Built interactive dashboards using slicers and filters.
+- Conducted revenue, customer, seller, and product analysis.
+- Designed business-focused visualizations and reports.
+
+
+## Data Flow
+
+1. Imported Olist CSV files into Power BI.
+2. Performed data cleaning and validation using Power Query.
+3. Built a Star Schema data model using fact and dimension tables.
+4. Established relationships between tables.
+5. Created DAX measures for KPI calculations.
+6. Developed interactive dashboards and reports.
+7. Generated business insights through visual analytics.
+
 
 ## Project Outcome
 
